@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collection;
+import java.util.GregorianCalendar;
+import java.util.Iterator;
+
 @Slf4j
 @RestController
 @RequestMapping("/api")
@@ -34,6 +38,13 @@ public class UserController {
     public ResponseEntity<?> usersName(@PathVariable String name) {
         log.info("=] name {}", name);
 
-        return ResponseEntity.ok("name"+name);
+        UserPrincipal principal = new UserPrincipal(Long.valueOf("1"),
+                name
+                , "usernameValue"
+                , "test@email.com"
+                , "pass"
+                , null);
+
+        return ResponseEntity.ok(principal);
     }
 }
