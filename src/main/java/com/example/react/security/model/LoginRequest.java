@@ -1,7 +1,12 @@
 package com.example.react.security.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.validation.constraints.NotBlank;
 
+@Setter
+@Getter
 public class LoginRequest {
     @NotBlank
     private String usernameOrEmail;
@@ -9,7 +14,7 @@ public class LoginRequest {
     @NotBlank
     private String password;
 
-    public String getUsernameOrEmail() {
+   /* public String getUsernameOrEmail() {
         return usernameOrEmail;
     }
 
@@ -23,5 +28,5 @@ public class LoginRequest {
 
     public void setPassword(String password) {
         this.password = password;
-    }
+    }*/
 }

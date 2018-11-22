@@ -1,11 +1,17 @@
 package com.example.react.security.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="roles")
+@NoArgsConstructor
+@Getter
+@Setter
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,15 +22,15 @@ public class Role {
     @Column(length = 60)
     private RoleName name;
 
-    public Role(){
+   /* public Role(){
 
-    }
+    }*/
 
     public Role(RoleName name) {
         this.name = name;
     }
 
-    public Long getId() {
+    /*public Long getId() {
         return id;
     }
 
@@ -38,5 +44,5 @@ public class Role {
 
     public void setName(RoleName name) {
         this.name = name;
-    }
+    }*/
 }

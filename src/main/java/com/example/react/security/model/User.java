@@ -1,5 +1,8 @@
 package com.example.react.security.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
@@ -18,6 +21,9 @@ import java.util.Set;
                 "email"
         })
 })
+@NoArgsConstructor
+@Setter
+@Getter
 public class User extends DateAudit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,9 +53,9 @@ public class User extends DateAudit {
             inverseJoinColumns = @JoinColumn(name="role_id"))
     private Set<Role> roles = new HashSet<>();
 
-    public User(){
+  /*  public User(){
 
-    }
+    }*/
 
     public User(String name, String username,  String email, String password) {
         this.name = name;
@@ -58,7 +64,7 @@ public class User extends DateAudit {
         this.password = password;
     }
 
-    public Long getId() {
+   /* public Long getId() {
         return id;
     }
 
@@ -104,5 +110,5 @@ public class User extends DateAudit {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
-    }
+    }*/
 }
